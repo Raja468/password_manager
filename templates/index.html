@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Password Manager</h1>
+
+    <!-- Add Credentials Form -->
+    <form action="/add" method="POST">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" placeholder="Website" required>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- Retrieve Credentials Form -->
+    <form action="/get" method="POST">
+        <label for="search_website">Search Website</label>
+        <input type="text" id="search_website" name="website" placeholder="Search Website">
+        <button type="submit">Retrieve</button>
+    </form>
+
+    {% if credentials %}
+        <h2>Results:</h2>
+        <ul>
+            {% for website, username, password in credentials %}
+                <li><strong>{{ website }}</strong> – {{ username }} – {{ password }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

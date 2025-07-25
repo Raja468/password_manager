@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url("/static/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Optional: dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent white */
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 12px;
+    width: 90%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h1 {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    color: white;
+}
